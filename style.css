@@ -1,95 +1,62 @@
-/* --- Reset e Configurações Gerais --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-  background-color: #0d1117; /* Fundo escuro estilo GitHub */
+  background-color: #0d1117; /* Fundo escuro estilo GitHub Dark */
   color: #c9d1d9;
   line-height: 1.6;
+  padding: 20px;
 }
 
-/* --- Header --- */
 header {
-  background-color: #161b22;
-  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #1f242c 0%, #0d1117 100%);
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 40px 20px;
   text-align: center;
-  border-bottom: 1px solid #30363d;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-  color: #58a6ff;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  color: #58a6ff; /* Azul da massa */
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
 }
 
-/* --- Container Principal (Grid) --- */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: grid;
-  /* Cria colunas responsivas que se ajustam sozinhas */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* --- Cards de Seção --- */
-section {
-  background-color: #161b22;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #30363d;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-5px);
-  border-color: #8b949e;
-}
-
-section h2 {
-  color: #f0f6fc;
-  margin-bottom: 1rem;
+header h2 {
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
+  color: #7ee787; /* Verde Mac Terminal */
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
 }
 
-/* Pequeno detalhe antes do título para parecer código */
-section h2::before {
-  content: "> ";
-  color: #238636;
-  margin-right: 8px;
-  font-family: monospace;
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
-section p {
-  font-size: 0.95rem;
-  color: #8b949e;
-}
-
-/* --- Formulário de Contato --- */
-/* Faz a seção do formulário ocupar a largura total no topo */
-section:first-of-type {
-  grid-column: 1 / -1; 
-  background-color: #1c2128;
-  border-left: 4px solid #238636;
-}
-
-.form {
-  max-width: 500px;
-  margin: 0 auto;
+main section:first-of-type {
+  grid-column: 1 / -1; /* Faz o formulário ocupar a largura toda no topo */
+  background: #161b22;
+  border: 2px solid #f0883e; /* Laranja de alerta de merge */
+  max-width: 600px;
+  margin: 0 auto 20px auto;
 }
 
 .form h2 {
-  justify-content: center;
-  font-size: 1.8rem;
+  color: #f0883e !important;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .input-group {
@@ -98,65 +65,98 @@ section:first-of-type {
 
 .input-group label {
   display: block;
+  font-size: 0.9rem;
+  color: #8b949e;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #58a6ff;
 }
 
-input, textarea {
+.input-group input,
+.input-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #0d1117;
   border: 1px solid #30363d;
   border-radius: 6px;
-  color: white;
+  color: #fff;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-input:focus, textarea:focus {
+.input-group input:focus,
+.input-group textarea:focus {
   outline: none;
   border-color: #58a6ff;
-  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
 }
 
-textarea {
-  min-height: 100px;
+.input-group textarea {
+  height: 100px;
   resize: vertical;
 }
 
-button {
+button[type="submit"] {
   width: 100%;
   padding: 12px;
-  background-color: #238636;
+  background-color: #238636; /* Verde "Commit" do GitHub */
   color: white;
   border: none;
   border-radius: 6px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1rem;
   transition: background 0.2s;
 }
 
-button:hover {
-  background-color: #2ea043;
+button[type="submit"]:hover {
+  background-color: #2ea44f;
+  transform: translateY(-2px);
 }
 
-/* --- Rodapé --- */
+section {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+section h2 {
+  font-size: 1.1rem;
+  color: #58a6ff;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 8px;
+}
+
+section p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  text-align: justify;
+}
+
+section p:last-of-type:not(:first-of-type) {
+  display: inline-block;
+  margin-top: 10px;
+  background: #388bfd1a;
+  color: #58a6ff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 footer {
+  margin-top: 40px;
+  padding: 20px;
   text-align: center;
-  padding: 3rem 1rem;
-  margin-top: 4rem;
   border-top: 1px solid #30363d;
-  color: #484f58;
-}
-
-/* --- Ajustes Mobile --- */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  
-  main {
-    grid-template-columns: 1fr;
-  }
+  color: #8b949e;
+  font-family: monospace;
 }
