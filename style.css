@@ -2,161 +2,151 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace; /* Fonte estilo código pura */
 }
 
 body {
-  background-color: #0d1117; /* Fundo escuro estilo GitHub Dark */
-  color: #c9d1d9;
-  line-height: 1.6;
-  padding: 20px;
+  background-color: #060713; /* Roxo espacial ultra escuro */
+  color: #00ffcc; /* Verde neon clássico de terminal */
+  padding: 30px;
+  min-height: 100vh;
 }
 
 header {
-  background: linear-gradient(135deg, #1f242c 0%, #0d1117 100%);
-  border: 1px solid #30363d;
-  border-radius: 12px;
-  padding: 40px 20px;
+  border: 2px dashed #ff007f; /* Borda rosa choque tracejada */
+  padding: 30px;
   text-align: center;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+  background: rgba(255, 0, 127, 0.03);
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
 }
 
 header h1 {
-  font-size: 3rem;
-  color: #58a6ff; /* Azul da massa */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Brilho neon ciano */
+  margin-bottom: 10px;
 }
 
 header h2 {
-  font-size: 1.2rem;
-  color: #7ee787; /* Verde Mac Terminal */
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: normal;
+  font-size: 1.1rem;
+  color: #ff007f;
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 main section:first-of-type {
-  grid-column: 1 / -1; /* Faz o formulário ocupar a largura toda no topo */
-  background: #161b22;
-  border: 2px solid #f0883e; /* Laranja de alerta de merge */
-  max-width: 600px;
-  margin: 0 auto 20px auto;
+  grid-column: 1 / -1; /* Ocupa a tela inteira de lado a lado */
+  background: #0d0e22;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  max-width: 500px;
+  margin: 0 auto 30px auto;
 }
 
 .form h2 {
-  color: #f0883e !important;
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  font-size: 0.9rem;
-  color: #8b949e;
-  margin-bottom: 5px;
+  color: #ff007f;
+  margin-bottom: 8px;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
   padding: 12px;
-  background-color: #0d1117;
-  border: 1px solid #30363d;
-  border-radius: 6px;
+  background: #060713;
+  border: 1px solid #ff007f;
   color: #fff;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  border-radius: 0; /* Totalmente quadrado, estilo retrô */
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
   outline: none;
-  border-color: #58a6ff;
-  box-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
-}
-
-.input-group textarea {
-  height: 100px;
-  resize: vertical;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
 }
 
 button[type="submit"] {
   width: 100%;
-  padding: 12px;
-  background-color: #238636; /* Verde "Commit" do GitHub */
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #2ea44f;
-  transform: translateY(-2px);
+  background: #00ffff;
+  color: #060713;
+  box-shadow: 0 0 20px #00ffff;
 }
 
 section {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 20px;
-  transition: transform 0.2s, border-color 0.2s;
+  background-color: #0d0e22;
+  border: 1px solid #1a1c3d;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 section:hover {
-  transform: translateY(-5px);
-  border-color: #58a6ff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-color: #ff007f;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+  transform: scale(1.02);
 }
 
 section h2 {
-  font-size: 1.1rem;
-  color: #58a6ff;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #21262d;
-  padding-bottom: 8px;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #ff007f;
 }
 
 section p {
   font-size: 0.9rem;
-  color: #8b949e;
-  text-align: justify;
+  color: #a2a5cd;
+  line-height: 1.5;
 }
 
+/* Destacando as palavras "Aleatorio" que estão perdidas no HTML */
 section p:last-of-type:not(:first-of-type) {
-  display: inline-block;
-  margin-top: 10px;
-  background: #388bfd1a;
-  color: #58a6ff;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  display: block;
+  margin-top: 15px;
+  color: #00ffff;
   font-weight: bold;
+  text-transform: uppercase;
+  border-left: 3px solid #ff007f;
+  padding-left: 10px;
 }
-
 footer {
-  margin-top: 40px;
-  padding: 20px;
+  grid-column: 1 / -1;
   text-align: center;
-  border-top: 1px solid #30363d;
-  color: #8b949e;
-  font-family: monospace;
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px dashed #1a1c3d;
+  color: #ff007f;
 }
