@@ -1,162 +1,152 @@
-/* --- Reset e Configurações Gerais --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace; /* Fonte estilo código pura */
 }
 
 body {
-  background-color: #0d1117; /* Fundo escuro estilo GitHub */
-  color: #c9d1d9;
-  line-height: 1.6;
+  background-color: #060713; /* Roxo espacial ultra escuro */
+  color: #00ffcc; /* Verde neon clássico de terminal */
+  padding: 30px;
+  min-height: 100vh;
 }
 
-/* --- Header --- */
 header {
-  background-color: #161b22;
-  padding: 3rem 1rem;
+  border: 2px dashed #ff007f; /* Borda rosa choque tracejada */
+  padding: 30px;
   text-align: center;
-  border-bottom: 1px solid #30363d;
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
+  background: rgba(255, 0, 127, 0.03);
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
 }
 
 header h1 {
-  color: #58a6ff;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Brilho neon ciano */
+  margin-bottom: 10px;
 }
 
-/* --- Container Principal (Grid) --- */
+header h2 {
+  font-size: 1.1rem;
+  color: #ff007f;
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+}
+
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: grid;
-  /* Cria colunas responsivas que se ajustam sozinhas */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
-/* --- Cards de Seção --- */
-section {
-  background-color: #161b22;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #30363d;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-5px);
-  border-color: #8b949e;
-}
-
-section h2 {
-  color: #f0f6fc;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-}
-
-/* Pequeno detalhe antes do título para parecer código */
-section h2::before {
-  content: "> ";
-  color: #238636;
-  margin-right: 8px;
-  font-family: monospace;
-}
-
-section p {
-  font-size: 0.95rem;
-  color: #8b949e;
-}
-
-/* --- Formulário de Contato --- */
-/* Faz a seção do formulário ocupar a largura total no topo */
-section:first-of-type {
-  grid-column: 1 / -1; 
-  background-color: #1c2128;
-  border-left: 4px solid #238636;
-}
-
-.form {
+main section:first-of-type {
+  grid-column: 1 / -1; /* Ocupa a tela inteira de lado a lado */
+  background: #0d0e22;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
 }
 
 .form h2 {
-  justify-content: center;
-  font-size: 1.8rem;
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  text-align: center;
 }
 
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 5px;
+  color: #ff007f;
+  margin-bottom: 8px;
   font-weight: bold;
-  color: #58a6ff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  background-color: #0d1117;
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  color: white;
-  font-size: 1rem;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #58a6ff;
-  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
-}
-
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-button {
+.input-group input,
+.input-group textarea {
   width: 100%;
   padding: 12px;
-  background-color: #238636;
-  color: white;
-  border: none;
-  border-radius: 6px;
+  background: #060713;
+  border: 1px solid #ff007f;
+  color: #fff;
+  border-radius: 0; /* Totalmente quadrado, estilo retrô */
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #2ea043;
+button[type="submit"]:hover {
+  background: #00ffff;
+  color: #060713;
+  box-shadow: 0 0 20px #00ffff;
 }
 
-/* --- Rodapé --- */
+section {
+  background-color: #0d0e22;
+  border: 1px solid #1a1c3d;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  border-color: #ff007f;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+  transform: scale(1.02);
+}
+
+section h2 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #ff007f;
+}
+
+section p {
+  font-size: 0.9rem;
+  color: #a2a5cd;
+  line-height: 1.5;
+}
+
+/* Destacando as palavras "Aleatorio" que estão perdidas no HTML */
+section p:last-of-type:not(:first-of-type) {
+  display: block;
+  margin-top: 15px;
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left: 3px solid #ff007f;
+  padding-left: 10px;
+}
 footer {
+  grid-column: 1 / -1;
   text-align: center;
-  padding: 3rem 1rem;
-  margin-top: 4rem;
-  border-top: 1px solid #30363d;
-  color: #484f58;
-}
-
-/* --- Ajustes Mobile --- */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  
-  main {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px dashed #1a1c3d;
+  color: #ff007f;
 }
