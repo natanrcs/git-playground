@@ -15,3 +15,10 @@ function functiongetDados(){
     console.log("Salvos com sucesso no database temporario",databaseTempory);
 };
 button.addEventListener("click",functiongetDados);
+
+function Calopsita() {
+    let message = "calopsita master";
+    for(let i = 0; i < 10; i++){
+        console.log(message);
+    }
+};
