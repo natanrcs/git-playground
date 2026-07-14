@@ -5,31 +5,30 @@
 }
 
 :root {
-  --clr-bg: #0f0f13;
-  --clr-bg-alt: #17171d;
-  --clr-surface: rgba(255, 255, 255, 0.04);
-  --clr-surface-border: rgba(255, 255, 255, 0.08);
-  --clr-primary: #ff8a3d;
-  --clr-primary-dark: #f2600d;
-  --clr-primary-light: rgba(255, 138, 61, 0.15);
-  --clr-text: #f4f1ec;
-  --clr-muted: #a8a5b0;
-  --clr-header-bg: #131316;
-  --clr-header-text: #f4f1ec;
-  --clr-footer-bg: #0b0b0e;
-  --radius: 16px;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  --transition: 0.25s ease;
+  --clr-bg: #f4f5fb;
+  --clr-surface: #ffffff;
+  --clr-border: #e3e5f0;
+  --clr-primary: #5b5bf6;
+  --clr-primary-dark: #4343d6;
+  --clr-primary-light: rgba(91, 91, 246, 0.12);
+  --clr-text: #1f2133;
+  --clr-muted: #6b6e85;
+  --clr-header-bg: #1f2133;
+  --clr-header-text: #ffffff;
+  --clr-footer-bg: #1f2133;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(31, 33, 51, 0.08);
+  --shadow-hover: 0 14px 32px rgba(31, 33, 51, 0.14);
+  --transition: 0.2s ease;
 }
 
 html {
-  font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body {
-  background: radial-gradient(circle at top, var(--clr-bg-alt), var(--clr-bg) 60%);
+  background: var(--clr-bg);
   color: var(--clr-text);
   line-height: 1.7;
   min-height: 100vh;
@@ -42,38 +41,23 @@ header {
   color: var(--clr-header-text);
   padding: 3.5rem 2rem;
   text-align: center;
-  border-bottom: 2px solid var(--clr-primary);
-  position: relative;
-  overflow: hidden;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255, 138, 61, 0.08), transparent);
 }
 
 header h1 {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   margin-bottom: 0.75rem;
-  background: linear-gradient(90deg, var(--clr-primary), #ffd166);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
+  color: var(--clr-header-text);
 }
 
 header h2 {
   font-size: clamp(0.9rem, 2vw, 1.05rem);
-  font-weight: 300;
-  color: var(--clr-muted);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
   max-width: 680px;
   margin: 0 auto;
   line-height: 1.6;
-  position: relative;
 }
 
 main {
@@ -84,14 +68,13 @@ main {
   padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 section:has(.form) {
   background: var(--clr-surface);
-  backdrop-filter: blur(12px);
   border-radius: var(--radius);
-  border: 1px solid var(--clr-surface-border);
+  border: 1px solid var(--clr-border);
   box-shadow: var(--shadow);
   padding: 2.2rem;
   margin-bottom: 0.5rem;
@@ -99,8 +82,8 @@ section:has(.form) {
 
 .form h2 {
   font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--clr-primary);
+  font-weight: 700;
+  color: var(--clr-text);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--clr-primary-light);
@@ -115,35 +98,35 @@ section:has(.form) {
 
 .input-group label {
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--clr-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .input-group input,
 .input-group textarea {
-  border: 1.5px solid var(--clr-surface-border);
+  border: 1.5px solid var(--clr-border);
   border-radius: 10px;
   padding: 0.65rem 0.9rem;
   font-size: 0.95rem;
   font-family: inherit;
   color: var(--clr-text);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--clr-bg);
   transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
 }
 
 .input-group input::placeholder,
 .input-group textarea::placeholder {
-  color: #6b6875;
+  color: #9a9cae;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
   border-color: var(--clr-primary);
   box-shadow: 0 0 0 3px var(--clr-primary-light);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--clr-surface);
 }
 
 .input-group textarea {
@@ -153,20 +136,21 @@ section:has(.form) {
 
 button[type="submit"] {
   display: inline-block;
-  background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-dark));
-  color: #14100c;
+  background: var(--clr-primary);
+  color: #ffffff;
   border: none;
   padding: 0.7rem 2rem;
   border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 button[type="submit"]:hover {
+  background: var(--clr-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 138, 61, 0.35);
+  box-shadow: 0 6px 16px rgba(91, 91, 246, 0.3);
 }
 
 button[type="submit"]:active {
@@ -175,23 +159,22 @@ button[type="submit"]:active {
 
 section {
   background: var(--clr-surface);
-  backdrop-filter: blur(12px);
   border-radius: var(--radius);
-  border: 1px solid var(--clr-surface-border);
+  border: 1px solid var(--clr-border);
   padding: 1.5rem 1.7rem;
   transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
 
 section:not(:has(.form)):hover {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-3px);
   border-color: var(--clr-primary);
 }
 
 section h2 {
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--clr-primary);
+  font-weight: 700;
+  color: var(--clr-text);
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -203,7 +186,7 @@ section h2::before {
   display: inline-block;
   width: 4px;
   height: 1.1em;
-  background: linear-gradient(180deg, var(--clr-primary), var(--clr-primary-dark));
+  background: var(--clr-primary);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -220,12 +203,11 @@ section p + p {
 
 footer {
   background: var(--clr-footer-bg);
-  color: var(--clr-muted);
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
   padding: 1.5rem;
   font-size: 0.85rem;
   margin-top: auto;
-  border-top: 1px solid var(--clr-surface-border);
 }
 
 footer p {
