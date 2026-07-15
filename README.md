@@ -1,57 +1,31 @@
 # 🚀 Git Playground: Aprendendo na Prática
 
-Este repositório é o meu "parque de diversões" particular para dominar o Git e o terminal do macOS. O objetivo principal aqui é testar comandos, errar sem medo, criar e excluir arquivos, e fixar o fluxo de trabalho de desenvolvimento.
+Eeste repo é um playground pessoal onde vou colocar em pratica o uso de versionamento com git.
+Aqui posso errar a vontade e entender como o versionamento funciona na prática e pegar o fluxo do dia a dia usando comandos essenciais do git.
 
-Afinal, a prática leva à perfeição e eu decidi focar no **"arroz com feijão"** bem feito!
+Comandos essenciais do dia-a-dia:
+git status - mostra o estado atual do repositório: arquivos modificados, adicionados (staged) ou não rastreados
 
----
+git branch - lista as branches existentes no repositório (a atual aparece marcada com *)
 
-## 🛠️ Tecnologias e Ferramentas
-*   **Git** (Controle de versão)
-*   **Terminal macOS** (Zsh/Bash)
-*   **GitHub** (Repositório remoto)
+git branch -b nova-branch - obs: a flag correta é "git checkout -b nova-branch" ou "git switch -c nova-branch"; cria e já move para uma nova branch chamada "nova-branch"
 
-## 🎯 Objetivos deste Repositório
-- [x] Entender o fluxo local para o remoto (`add`, `commit`, `push`).
-- [x] Praticar a criação e alternância de branches.
-- [x] Testar a remoção de arquivos e pastas via terminal.
-- [ ] Dominar a resolução de conflitos e merges.
+git rebase - reaplica os commits de uma branch em cima de outra, reescrevendo o histórico para deixá-lo linear
 
-## 📜 Comandos que estou dominando
-git init = iniciar o git no repositorio
-git add = adiciona os arquivos
-git commit -m = mensagem da alteraçao
-git branch = mostra qual branch voce tá
-git merge = mescla sua alteracao na main
-git log = mostra historicos de commits
-git diff = mostra a diferença no que foi alterado
-git restore = volta para ultima versao do projeto
-git switch -c nome-da-branch = cria e entra branch
-git pull = atualiza o repo local com base no github
-git rebase = pega oque foi alterado e cria uma nova linha do tempo linear
+git merge - une o histórico de outra branch com a branch atual, criando um commit de merge (quando necessário)
 
-### Branches
-```bash
-# Criar e entrar em uma nova branch
-git switch -c nome-da-branch
-```
+git commit -m "nova mensagem" - grava as alterações que estão na staging area como um novo commit, com a mensagem indicada
 
-### Gerenciamento de Arquivos
-```bash
-# Apagar arquivo local e do Git ao mesmo tempo
-git rm nome-do-arquivo.txt
+git init - inicializa um novo repositório Git na pasta atual
 
-# Apagar uma pasta inteira
-git rm -r nome-da-pasta
-```
+git log - exibe o histórico de commits (autor, data, hash e mensagem)
 
-### Sincronização
-```bash
-# Mesclar alterações na branch principal
-git switch main
-git merge nome-da-branch
-```
+git diff - mostra as diferenças entre arquivos modificados e o último commit (ou entre outras referências, dependendo dos parâmetros)
 
----
+git restore - desfaz alterações em arquivos, revertendo-os para o estado do último commit (ou remove do stage, com --staged)
 
-> 💡 *Conforme eu for evoluindo, este README e os arquivos do projeto serão atualizados. O foco é meter o loco nos commits até o fluxo entrar na mente!*
+git add . - adiciona todos os arquivos modificados/novos da pasta atual à staging area, preparando-os para o commit
+
+git rm nome-do-arquivo - remove um arquivo do repositório (e do diretório de trabalho) e já marca a remoção para o próximo commit
+
+git rm -r nome-da-pasta - remove uma pasta inteira (recursivamente) do repositório e do diretório de trabalho, marcando para o próximo commit
