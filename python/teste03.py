@@ -23,4 +23,35 @@ print(carro2.desligar())
 
 print(carro3.ligar())
 print(carro3.desligar())
+
+class Contabancaria:
+    def __init__(self,titular,saldo):
+        self.titular = titular
+        self.saldo = saldo
+
+    def sacar(self):
+        try:
+            if self.saldo <= 0:
+                print("Saque negado!")
+            else:
+                self.saldo -= self.saldo
+        except:
+            print("Error ao realizar a transaçao!")
+
+    
+    def depositar(self):
+        self.saldo += self.saldo
+        return f"Deposito feito!"
+    
+    def consultar_saldo(self):
+        return f"Seu saldo é de:{self.saldo}"
+
+conta1 = Contabancaria("Natan",100)
+conta2 = Contabancaria("Gabi",500)
+print(conta1.consultar_saldo())
+print(conta1.depositar(100))
+print(conta1.sacar(50))
+
+
+        
         
