@@ -29,22 +29,26 @@ class Contabancaria:
         self.titular = titular
         self.saldo = saldo
 
-    def sacar(self):
-        try:
-            if self.saldo <= 0:
-                print("Saque negado!")
-            else:
-                self.saldo -= self.saldo
-        except:
-            print("Error ao realizar a transaçao!")
+    def sacar(self,valor):
+        if valor <= 0:
+            return "Valor tem que ser maior que 0!"
+        elif valor > self.saldo:
+            return "Vc nao tem saldo suficiente!"
+        else:
+            self.saldo -= valor
+            return "Saque com sucesso"
+        
 
     
-    def depositar(self):
-        self.saldo += self.saldo
-        return f"Deposito feito!"
+    def depositar(self,valor):
+        if valor <= 0:
+            return "Deposito acima de 0!"
+        else:
+            self.saldo += valor
+        return f"{valor} depositado com sucesso!"
     
     def consultar_saldo(self):
-        return f"Seu saldo é de:{self.saldo}"
+        return f"Titular:{self.titular} Seu saldo é de:{self.saldo}"
 
 conta1 = Contabancaria("Natan",100)
 conta2 = Contabancaria("Gabi",500)
